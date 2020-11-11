@@ -1,17 +1,19 @@
-import logo from './logo.svg';
+import logo from './soloLogo.png';
+import logoReact from './logo.svg';
 import './App.css';
 
 function App() {
   console.log('prova console log');
-  let pippo = null;
-  debugger;
-  pippo = "mariuccio";
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        Ecco la mia prima app in react
+        <h2>conDesign</h2>
+        Web Agency
+        </p>
+        <p className="testoWhite">
+          Sviluppo di siti web e applicazioni multimediali
         </p>
         <a
           className="App-link"
@@ -21,6 +23,8 @@ function App() {
         >
           condesign
         </a>
+        <h4>Power by React</h4>
+        <img src={logoReact} className="App-logo-react" alt="logo" />
       </header>
     </div>
   );
