@@ -1,4 +1,4 @@
-import logo from './soloLogo.png';
+import logo from './assets/soloLogo.png';
 import logoReact from './logo.svg';
 import './App.css';
 
@@ -9,15 +9,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        <h2>conDesign</h2>
+        <h2 id="titolo1">conDesign</h2>
         Web Agency
         </p>
         <p className="testoWhite">
-          Sviluppo di siti web e applicazioni multimediali
+          Sviluppo di Siti Web e App multimediali
         </p>
         <a
           className="App-link"
-          href="https://www.condesign.it"
+         href="https://www.condesign.it"
           target="_blank"
           rel="noopener noreferrer"
         >
