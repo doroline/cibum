@@ -20,6 +20,18 @@
   padding: 10px;
   border-radius: 0px 0px 20px;
 }
+footer{
+  background-color: rgb(131, 20, 20);
+  color: white;
+  padding: 20px 0px;
+}
+.btn{
+  background-color: #88461d;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
   animation: App-logo-spin  1s ease-out;

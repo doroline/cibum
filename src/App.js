@@ -1,31 +1,41 @@
-import logo from './assets/soloLogo.png';
-import logoReact from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import Img from './Img';
 
 function App() {
-  console.log('prova console log');
+
+  const [currentLabel, setCurrentLabel] = useState("Pinco Pallino");
+  const [showImg, setShowImg] = useState(false);
+
+  const gestisciClick = () => {
+    console.log('HA CLICCATO');
+    setCurrentLabel("Hai Cliccato");
+    setShowImg(true);
+  }
+
+  const nascondiClick = () => {
+    console.log('HA CLICCATO DI NUOVO');
+    setShowImg(false);
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        <h2 id="titolo1">conDesign</h2>
-        Web Agency
-        </p>
-        <p className="testoWhite">
-          Sviluppo di Siti Web e App multimediali
-        </p>
-        <a
-          className="App-link"
-         href="https://www.condesign.it"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          condesign
-        </a>
-        <h4>Power by React</h4>
-        <img src={logoReact} className="App-logo-react" alt="logo" />
+        {showImg &&(
+          <>
+            <Img 
+              label={currentLabel}
+            />
+            <div onClick={nascondiClick} className="btn">
+            CLICCA e NASCONDI
+            </div>
+        </>
+        )}
+       { !showImg &&(<div onClick={gestisciClick} className="btn">
+        CLICCA e SCOPRI
+      </div>)}
+
       </header>
+      
     </div>
   );
 }
