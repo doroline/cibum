@@ -7,7 +7,7 @@ import bandieraEn from '../assets/bandiera-en.png';
 import bandieraEs from '../assets/bandiera-es.png';
 
 function App() {
-  const [linguaPagina, setCurrentLingua] = useState(<Lingue lingua="it" />);
+  const [currentLingua, setCurrentLingua] = useState("it");
   const [currentLabel, setCurrentLabel] = useState("Pinco Pallino");
   const [showImg, setShowImg] = useState(false);
 
@@ -21,19 +21,22 @@ function App() {
     console.log('HA CLICCATO DI NUOVO');
     setShowImg(false);
   }
-  const testoEn = () =>{
-    setCurrentLingua(<Lingue lingua="en" />);
-  }
-  const testoIt = () =>{
-    setCurrentLingua(<Lingue lingua="it" />);
-  }
-  const testoEs = () =>{
-    setCurrentLingua(<Lingue lingua="es" />);
-  }
+  // const testoEn = () =>{
+  //   setCurrentLingua("en");
+  // }
+  // const testoIt = () =>{
+  //   setCurrentLingua("it");
+  // }
+  // const testoEs = () =>{
+  //   setCurrentLingua("es");
+  // }
+  const handleLangChange = (linguaCliccata) =>{
+  setCurrentLingua(linguaCliccata);
+}
   return (
     <div className="App">
       <header className="App-header">
-        {showImg &&(
+      {showImg &&(
           <>
             <Img 
               label={currentLabel}
@@ -43,15 +46,16 @@ function App() {
             </div>
         </>
         )}
+       
        { !showImg &&(<div onClick={gestisciClick} className="btn">
         CLICCA e SCOPRI
       </div>)}
          
-              <div>{linguaPagina}</div>
+              <div><Lingue lingua={currentLingua} /></div>
               <div>
-              <img src={bandieraIt} alt="bandieraIt" onClick={testoIt} className="btn2"/>
-              <img src={bandieraEn} alt="bandieraEn" onClick={testoEn} className="btn2"/>
-              <img src={bandieraEs} alt="bandieraEs" onClick={testoEs} className="btn2"/>
+              <img src={bandieraIt} alt="bandieraIt" onClick={() => handleLangChange("it")} className="btn2"/>
+              <img src={bandieraEn} alt="bandieraEn" onClick={() => handleLangChange("en")} className="btn2"/>
+              <img src={bandieraEs} alt="bandieraEs" onClick={() => handleLangChange("es")} className="btn2"/>
           </div>
       </header>
       
