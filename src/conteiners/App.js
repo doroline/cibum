@@ -6,6 +6,7 @@ import bandieraIt from '../assets/bandiera-it.png';
 import bandieraEn from '../assets/bandiera-en.png';
 import bandieraEs from '../assets/bandiera-es.png';
 
+
 function App() {
   const [currentLingua, setCurrentLingua] = useState("it");
   const [currentLabel, setCurrentLabel] = useState("Pinco Pallino");
@@ -45,11 +46,11 @@ function App() {
             CLICCA e NASCONDI
             </div>
         </>
-        )};
+        )}
        
        { !showImg &&(<div onClick={gestisciClick} className="btn">
         CLICCA e SCOPRI
-      </div>)};
+      </div>)}
          
               <div><Lingue lingua={currentLingua} /><span>{currentLingua}</span></div>
               <div>
