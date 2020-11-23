@@ -15,12 +15,12 @@ function App() {
     console.log('HA CLICCATO');
     setCurrentLabel("Hai Cliccato");
     setShowImg(true);
-  }
+  };
 
   const nascondiClick = () => {
     console.log('HA CLICCATO DI NUOVO');
     setShowImg(false);
-  }
+  };
   // const testoEn = () =>{
   //   setCurrentLingua("en");
   // }
@@ -30,9 +30,9 @@ function App() {
   // const testoEs = () =>{
   //   setCurrentLingua("es");
   // }
-  const handleLangChange = (linguaCliccata) =>{
+  const cambiaLingua = (linguaCliccata) =>{
   setCurrentLingua(linguaCliccata);
-}
+};
   return (
     <div className="App">
       <header className="App-header">
@@ -45,17 +45,17 @@ function App() {
             CLICCA e NASCONDI
             </div>
         </>
-        )}
+        )};
        
        { !showImg &&(<div onClick={gestisciClick} className="btn">
         CLICCA e SCOPRI
-      </div>)}
+      </div>)};
          
-              <div><Lingue lingua={currentLingua} /></div>
+              <div><Lingue lingua={currentLingua} /><span>{currentLingua}</span></div>
               <div>
-              <img src={bandieraIt} alt="bandieraIt" onClick={() => handleLangChange("it")} className="btn2"/>
-              <img src={bandieraEn} alt="bandieraEn" onClick={() => handleLangChange("en")} className="btn2"/>
-              <img src={bandieraEs} alt="bandieraEs" onClick={() => handleLangChange("es")} className="btn2"/>
+              <img src={bandieraIt} alt="bandieraIt" onClick={() => cambiaLingua("it")} className="btn2"/>
+              <img src={bandieraEn} alt="bandieraEn" onClick={() => cambiaLingua("en")} className="btn2"/>
+              <img src={bandieraEs} alt="bandieraEs" onClick={() => cambiaLingua("es")} className="btn2"/>
           </div>
       </header>
       
