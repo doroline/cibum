@@ -43,12 +43,41 @@ footer{
     margin: 10px;
     padding: 10px 0px;
 }
+#cambioColori{
+  background: black;
+  width: 100%;
+  font-size: 13px;
+  position: absolute;
+  top:0px;
+  color: white;
+}
+.btn3{
+  color: black;
+  /* padding: 10px 20px; */
+  cursor: pointer;
+  border-radius: 28px;
+  width: auto;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 12px;
+  border: none;
+}
 .paragrafo{
   width: 80%;
     margin: auto;
     font-size: 18px;
     border: 1px solid white;
     padding: 10px;
+}
+.campiTesto {
+  width: 70px;
+  height: 22px;
+  border: none;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+li {
+  list-style-type: none;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -57,7 +86,6 @@ footer{
 }
 
 .App-header {
-  background-color: #e0902c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
