@@ -25,6 +25,14 @@ function Lista() {
     setColoreTestiCorrente(nuovoColoreTesti);
     };
 
+  //PARTE DEDICATA AL CAMBIO DI DIMENSIONE FONT
+  const [textSizeCorrente, setTextSizeCorrente]= useState("25px"); //imposto il la dimensione del testo di defaul a 25px
+
+  const cambiaTextSize = (evento) =>{ // qui si attiva l'onChange e si prende il paramentro del option del select lo passa a setTextSizeCorrente, che cambia lo stato a textSizeCorrente, che cambierà il css dinamicao del font-size
+  setTextSizeCorrente(evento.target.value);
+  };
+ 
+
 
 //PARTE DEDICATA ALLA CREAZIONE DELLA LISTA
     const [inputCorrente, setInputCorrente]= useState("");
@@ -40,7 +48,7 @@ function Lista() {
     };
   return (
     <div className="App">
-        <header className="App-header"  style={{backgroundColor: coloreCorrente, color: coloreTestiCorrente} }>
+        <header className="App-header"  style={{backgroundColor: coloreCorrente, color: coloreTestiCorrente, fontSize: textSizeCorrente} }>
                 <div id="cambioColori">
                  <span>colore dello sfondo: </span>
                 <input onChange={(evento) => salvaColore(evento)} className="campiTesto" />
@@ -50,6 +58,11 @@ function Lista() {
                 <input onChange={(evento) => salvaColoreTesti(evento)} className="campiTesto"/>
                 <button type="button"onClick={() => cambiaColoreTesti()} className="btn3">TESTI</button>
                 
+                font: <select onChange={(evento) => cambiaTextSize(evento)}>
+                    <option value="15px">piccolo</option>
+                    <option value="25px" selected>medio</option>
+                    <option value="35px">grande</option>
+                </select>
                 </div>
 
            <h4>Scrivi cosa vuoi aggiungere alla lista:</h4>
