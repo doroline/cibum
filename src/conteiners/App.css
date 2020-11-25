@@ -42,6 +42,10 @@ footer{
     display: inline-block;
     margin: 10px;
     padding: 10px 0px;
+
+}
+.MuiGrid-spacing-xs-2{
+  width: 300px!important;
 }
 #cambioColori{
   background: black;
@@ -50,6 +54,8 @@ footer{
   position: absolute;
   top:0px;
   color: white;
+  height: 40px;
+  padding-top: 8px;
 }
 .btn3{
   color: black;
@@ -61,6 +67,10 @@ footer{
   margin: 10px;
   padding: 10px 12px;
   border: none;
+}
+.btn-grey{
+  background: #484848;
+  margin-right: 5px!important;
 }
 .paragrafo{
   width: 80%;

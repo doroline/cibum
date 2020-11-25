@@ -1,7 +1,33 @@
 import {Component, useState} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import VolumeDown from '@material-ui/icons/VolumeDown';
+import VolumeUp from '@material-ui/icons/VolumeUp';
 import './App.css';
 
+const useStyles = makeStyles({
+    root: {
+      width: 200,
+    },
+  });
+
 function Lista() {
+ 
+        const classes = useStyles();
+        const [value, setValue] = useState(30);
+        const handleChange = (event, newValue) => {
+          setValue(newValue);
+        };
+
+
+
 //PARTE DEDICATA AL CAMBIO DI COLORE DELLO SFONDO
     const [coloreCorrente, setColoreCorrente]= useState("orange"); //imposto il colore di defaul su orange e lo preparo al cambio di stato
     const [nuovoColore, setNuovoColore]= useState(""); //creo una super variabile 'nuovoColore' che cambierà il suo stato quando si attiverà l'onChange sul campo input
@@ -50,25 +76,32 @@ function Lista() {
     <div className="App">
         <header className="App-header"  style={{backgroundColor: coloreCorrente, color: coloreTestiCorrente, fontSize: textSizeCorrente} }>
                 <div id="cambioColori">
-                 <span>colore dello sfondo: </span>
-                <input onChange={(evento) => salvaColore(evento)} className="campiTesto" />
-                <button type="button"onClick={() => cambiaColore()} className="btn3" >SFONDO</button>
+                 <span> colore dello sfondo: </span>
+                 <Input id="standard-basic" color="secondary" onChange={(evento) => salvaColore(evento)} style={{color:'red'}} className="btn-grey"/>
+            
+                <Button variant="contained" onClick={() => cambiaColore()} color="secondary">
+        SFONDO
+      </Button>
 
-                <span>colore dei testi: </span>
-                <input onChange={(evento) => salvaColoreTesti(evento)} className="campiTesto"/>
-                <button type="button"onClick={() => cambiaColoreTesti()} className="btn3">TESTI</button>
-                
-                font: <select onChange={(evento) => cambiaTextSize(evento)}>
-                    <option value="15px">piccolo</option>
-                    <option value="25px" selected>medio</option>
-                    <option value="35px">grande</option>
-                </select>
+                <span> colore dei testi: </span>
+                <Input id="standard-basic" color="secondary" onChange={(evento) => salvaColoreTesti(evento)} style={{color:'red'}} className="btn-grey"/>
+                <Button variant="contained" onClick={() => cambiaColoreTesti()} color="secondary">TESTI</Button> font: 
+                <Select
+        labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          onChange={(evento) => cambiaTextSize(evento)}
+          style={{color:'red'}}
+          className="btn-grey"
+        >
+          <MenuItem value="15px">piccolo</MenuItem>
+          <MenuItem value="25px" selected="selected">medio</MenuItem>
+          <MenuItem value="35px">grande</MenuItem>
+        </Select>
                 </div>
 
            <h4>Scrivi cosa vuoi aggiungere alla lista:</h4>
-            <input value={inputCorrente} onChange={(evento) => gestisciOnChange(evento)}/>
-
-            <button type="button" onClick={() => aggiungiElementoAllaLista()}>AGGIUNGI</button>
+           <TextField id="outlined-basic" value={inputCorrente} onChange={(evento) => gestisciOnChange(evento)} variant="outlined"/>
+            <Button variant="contained" onClick={() => aggiungiElementoAllaLista()} >AGGIUNGI</Button>
             <div>Ecco lista completa delle cose che hai scelto:
                 <ul>
                 {lista.map((elemento, indice) => {
@@ -81,6 +114,21 @@ function Lista() {
 
                 </ul>
             </div> 
+
+            <Typography id="continuous-slider" gutterBottom>
+        Volume
+      </Typography>
+      <Grid container spacing={2}>
+        <Grid item>
+          <VolumeDown />
+        </Grid>
+        <Grid item xs>
+          <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+        </Grid>
+        <Grid item>
+          <VolumeUp />
+        </Grid>
+      </Grid>
         </header>
       
       </div>
