@@ -13,3 +13,17 @@ export const testi = {
     },
 }
 
+export const testiNav = {
+    it: {
+        home: "home",
+        chiSiamo: "chi siamo",
+        progetti: "progetti",
+        contatti: "contatti"
+    },
+    en: {
+        home: "home",
+        chiSiamo: "who us",
+        progetti: "projects",
+        contatti: "contacts"
+    },
+}

@@ -1,4 +1,6 @@
 import {Component, useState} from 'react';
+import NavBar from '../components/NavBar';
+import BandieraLingua from '../components/BandieraLingua';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
@@ -19,15 +21,16 @@ const useStyles = makeStyles({
   });
 
 function Lista() {
- 
+    const [currentLingua, setCurrentLingua] = useState("it"); // è importate che lo state che contiene le super variabile sia nel file padre, per questo lo scrivo q
         const classes = useStyles();
         const [value, setValue] = useState(30);
+        
         const handleChange = (event, newValue) => {
           setValue(newValue);
         };
 
 
-
+ 
 //PARTE DEDICATA AL CAMBIO DI COLORE DELLO SFONDO
     const [coloreCorrente, setColoreCorrente]= useState("orange"); //imposto il colore di defaul su orange e lo preparo al cambio di stato
     const [nuovoColore, setNuovoColore]= useState(""); //creo una super variabile 'nuovoColore' che cambierà il suo stato quando si attiverà l'onChange sul campo input
@@ -96,9 +99,12 @@ function Lista() {
           <MenuItem value="15px">piccolo</MenuItem>
           <MenuItem value="25px" selected="selected">medio</MenuItem>
           <MenuItem value="35px">grande</MenuItem>
-        </Select>
+        </Select>   
+        <BandieraLingua setLingua={setCurrentLingua}/>
+        {/* al componente BandieraLingua aggiungo una prop che chiamo setLingua che conterrà il valore del metodo setCurrentLingua  */}
                 </div>
 
+             
            <h4>Scrivi cosa vuoi aggiungere alla lista:</h4>
            <TextField id="outlined-basic" value={inputCorrente} onChange={(evento) => gestisciOnChange(evento)} variant="outlined"/>
             <Button variant="contained" onClick={() => aggiungiElementoAllaLista()} >AGGIUNGI</Button>
@@ -129,8 +135,11 @@ function Lista() {
           <VolumeUp />
         </Grid>
       </Grid>
+      {currentLingua}
         </header>
-      
+      <footer> 
+          <NavBar lingua={currentLingua}/>
+      </footer>
       </div>
   );
 }
