@@ -26,4 +26,10 @@ export const testiNav = {
         progetti: "projects",
         contatti: "contacts"
     },
+    es: {
+        home: "home",
+        chiSiamo: "amigos",
+        progetti: "projects",
+        contatti: "contacts"
+    },
 }

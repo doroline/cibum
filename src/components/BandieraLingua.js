@@ -5,7 +5,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 function BandieraLingua(props) {
-
     const cambiaLingua = (linguaCliccata) =>{
       props.setLingua(linguaCliccata);
     };
@@ -18,8 +17,8 @@ function BandieraLingua(props) {
             LINGUA
           </Button>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={() => cambiaLingua("it")}>it</MenuItem>
-            <MenuItem onClick={() => cambiaLingua("en")}>en</MenuItem>
+            <MenuItem onClick={() => {cambiaLingua("it");}}>it</MenuItem>
+            <MenuItem onClick={() => {cambiaLingua("en");}}>en</MenuItem>
           </Menu>
         </>
       )}
