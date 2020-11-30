@@ -1,17 +1,17 @@
-import {Component, useState} from 'react';
+import { Component, useState } from 'react';
 import ScegliLingua from '../components/ScegliLingua';
 import BarraNavigazione from '../components/BarraNavigazione';
 import './App.css';
 
 function Home() {
-    const [currentLingua, setCurrentLingua] = useState("it");    
+  const [currentLingua, setCurrentLingua] = useState("it");
   return (
     <div className="App">
       <header className="App-header">
-   <ScegliLingua setLingua={setCurrentLingua}/>
+        <ScegliLingua setLingua={setCurrentLingua} />
       </header>
       <footer>
-          <BarraNavigazione lingua={currentLingua}/>
+        <BarraNavigazione lingua={currentLingua} />
       </footer>
     </div>
   );

@@ -1,4 +1,6 @@
 import {Component, useState} from 'react';
+import firebase from 'firebase';
+import firebaseConfig from '../firebaseConfig';
 import NavBar from '../components/NavBar';
 import BandieraLingua from '../components/BandieraLingua';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,6 +15,8 @@ import Slider from '@material-ui/core/Slider';
 import VolumeDown from '@material-ui/icons/VolumeDown';
 import VolumeUp from '@material-ui/icons/VolumeUp';
 import './App.css';
+
+firebase.initializeApp(firebaseConfig);
 
 const useStyles = makeStyles({
     root: {
@@ -65,11 +69,22 @@ function Lista() {
 
 //PARTE DEDICATA ALLA CREAZIONE DELLA LISTA
     const [inputCorrente, setInputCorrente]= useState("");
-    const [lista, setLista]= useState([]); // cosi facendo inizializzo la supervariabile lista come un array
+    const [lista, setLista] = useState([]); // cosi facendo inizializzo la supervariabile lista come un array
+    const [chiaviRicette, setChiaviRicette] = useState([]);
+    const [oggettoRicette, setOggettoRicette] = useState({});
     const gestisciOnChange = (evento) =>{
         setInputCorrente(evento.target.value);
     };
     const aggiungiElementoAllaLista = () =>{
+        const recipesRef = firebase.database().ref('/recipes');
+        recipesRef.on("value", snapshot => {
+          const ricetteOnLine = snapshot.val();
+          console.log(ricetteOnLine);
+          const arrayRicette = Object.keys(ricetteOnLine);
+          setOggettoRicette(ricetteOnLine); // cosi facendo abbiamo popolato anche l'oggetto ricette
+          setChiaviRicette(arrayRicette);
+        });
+
         const listaAggiornata = [... lista];// con questi 3 punti gli dico di CLONARE tutto il contenuto dell array lista, avessimo dovuto clonare un oggetto sarebbe stata la setssa cosa ma nelle graffe {... pippo}
         listaAggiornata.push(inputCorrente);// aggiungo l'input corrente
         setLista(listaAggiornata); // modifico la nostra lista
@@ -110,10 +125,10 @@ function Lista() {
             <Button variant="contained" onClick={() => aggiungiElementoAllaLista()} >AGGIUNGI</Button>
             <div>Ecco lista completa delle cose che hai scelto:
                 <ul>
-                {lista.map((elemento, indice) => {
+                {chiaviRicette.map((chiaveCorrente, indice) => {
                         //il map ci permette di ciclare un array e di mostrare gli elementi che contiene
                         return(
-                            <li>{elemento}</li>
+                            <li key={indice}>{oggettoRicette.[chiaveCorrente].name}</li>
                         )
                     }
                 )}
