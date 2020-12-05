@@ -80,7 +80,6 @@ function Lista() {
     const recipesRef = firebase.database().ref('/recipes');
     recipesRef.on("value", snapshot => {
       const ricetteOnLine = snapshot.val();
-      console.log(ricetteOnLine);
       const arrayRicette = Object.keys(ricetteOnLine);
       setOggettoRicette(ricetteOnLine); // cosi facendo abbiamo popolato anche l'oggetto ricette
       setChiaviRicette(arrayRicette);
