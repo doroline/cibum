@@ -64,19 +64,20 @@ function Clienti() {
                 <button onClick={() => aggiungiElementoAllaLista()} >AGGIUNGI CLIENTE</button>
                 <div>Ecco i nostri clienti:
                 <ul >
-                        {nodo.map((cliente, indice) => {
+                        {nodo.map((id, indice) => {
+                            //  console.log(chiavi);
+                            //il map ci permette di ciclare un array e di mostrare gli elementi che contiene
                             return (
                                 <li key={indice}>
-                                    <img src={cliente.foto.url} style={{ width: "150px" }} alt={cliente.foto.alt} />
+                                    <img src={id.foto.url} style={{ width: "150px" }} alt={id.foto.alt} />
                                     <br />
-                                   nome: {cliente.nome} {cliente.cognome}
-                                    <br /> nato a {cliente.citta}
+                                    nome: {id.nome} {id.cognome}
+                                    <br /> nato a {id.citta}
                                 </li>
                             )
                         }
                         )}
                     </ul>
-
                 </div>
             </header>
 

@@ -4,14 +4,15 @@ import './index.css';
 //import App from './conteiners/App';
 //import Lista from './conteiners/Lista';
 //import AddLista from './conteiners/AddLista';
-import Clienti from './conteiners/Clienti';
+//import Clienti from './conteiners/Clienti';
+import ClientiLettura from './conteiners/ClientiLettura';
 //import HomeDb from './conteiners/HomeDb';
 //import Home from './conteiners/Home';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Clienti />
+    <ClientiLettura />
   </React.StrictMode>,
   document.getElementById('root')
 );
