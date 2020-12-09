@@ -1,0 +1,12 @@
+{
+  "danilo": {
+    "nome": "Danilo",
+    "cognome": "De Filio",
+    "foto": "https://scontent.ffco4-1.fna.fbcdn.net/v/t1.0-1/p480x480/31171182_10216207845889359_3727351638000664576_o.jpg?_nc_cat=106&ccb=2&_nc_sid=7206a8&_nc_ohc=cm2hoENP_iUAX_RF2f1&_nc_ht=scontent.ffco4-1.fna&tp=6&oh=04b845c01fdb03984500b0c153c39260&oe=5FF75ED7"
+  },
+  "damiano": {
+    "nome": "Damiano",
+    "cognome": "Chiarucci",
+    "foto": "https://scontent.ffco4-1.fna.fbcdn.net/v/t31.0-8/22829442_1661614523888804_291723429355529640_o.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=g-zB_gN239EAX_EwK8s&_nc_ht=scontent.ffco4-1.fna&oh=0fbc1b5f1de60244b2c31f1a77e5fe87&oe=5FF632A9"
+  }
+}

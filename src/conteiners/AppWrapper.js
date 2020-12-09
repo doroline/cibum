@@ -1,4 +1,6 @@
-.App {
+import styled from 'styled-components';
+const Wrapper = styled.div`
+   .App {
   text-align: center;
 }
 
@@ -112,7 +114,7 @@ footer{
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -133,3 +135,6 @@ footer{
     transform: rotate(360deg);
   }
 }
+
+`
+export default Wrapper;

@@ -55,7 +55,7 @@ function Clienti() {
                 <div>Ecco i nostri clienti:
                 <ul >
                         {nodo.map((cliente, indice) => {
-                            console.log(chiavi, nodo);
+                            //console.log(chiavi, nodo);
                             //il map ci permette di ciclare un array e di mostrare gli elementi che contiene
                             return (
                                 <li key={indice}>

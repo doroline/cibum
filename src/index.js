@@ -5,14 +5,18 @@ import './index.css';
 //import Lista from './conteiners/Lista';
 //import AddLista from './conteiners/AddLista';
 //import Clienti from './conteiners/Clienti';
-import ClientiLettura from './conteiners/ClientiLettura';
+//import Clienti from './conteiners/ClientiMenu';
+//import Drawer from './conteiners/Drawer';
+//import ClientiLettura from './conteiners/ClientiLettura';
+//import ClientiLetturaObj from './conteiners/ClientiLetturaObj';
+import ClientiLetturaEScritturaObj from './conteiners/ClientiLetturaEScritturaObj';
 //import HomeDb from './conteiners/HomeDb';
 //import Home from './conteiners/Home';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ClientiLettura />
+    <ClientiLetturaEScritturaObj />
   </React.StrictMode>,
   document.getElementById('root')
 );
