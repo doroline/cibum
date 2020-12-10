@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import GlobalStyles from './globalStyles';
 //import App from './conteiners/App';
 //import Lista from './conteiners/Lista';
 //import AddLista from './conteiners/AddLista';
@@ -8,15 +9,18 @@ import './index.css';
 //import Clienti from './conteiners/ClientiMenu';
 //import Drawer from './conteiners/Drawer';
 //import ClientiLettura from './conteiners/ClientiLettura';
-//import ClientiLetturaObj from './conteiners/ClientiLetturaObj';
-import ClientiLetturaEScritturaObj from './conteiners/ClientiLetturaEScritturaObj';
+//import Clienti from './conteiners/ClientiLetturaObj';
+import Clienti from './conteiners/ClientiLetturaEScritturaObj';
 //import HomeDb from './conteiners/HomeDb';
 //import Home from './conteiners/Home';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ClientiLetturaEScritturaObj />
+  <>
+    <Clienti />
+    <GlobalStyles />
+  </>
   </React.StrictMode>,
   document.getElementById('root')
 );

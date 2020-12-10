@@ -4,9 +4,6 @@ import firebase from "firebase";
 
 import firebaseConfig from "../firebaseConfig";
 
-
-
-
 firebase.initializeApp(firebaseConfig);
 
 function Clienti() {
@@ -46,7 +43,9 @@ function Clienti() {
   };
   const aggiungiElementoAllaLista = () => {
     const nuovaLista = [...nodo];
-
+    const riferimentoLista = firebase.database().ref("/clienti");
+    riferimentoLista.set(nuovaLista);
+    
     nuovaLista.push({
       ...inputCorrente,
       foto: { url: inputCorrente.url, alt: inputCorrente.alt },
@@ -54,16 +53,11 @@ function Clienti() {
     setNodo(nuovaLista);
     setInputCorrente({ url: "", nome: "", cognome: "", citta: "", alt: "" });
 
-    const riferimentoLista = firebase.database().ref("/clienti");
-    riferimentoLista.set(nuovaLista);
+ 
   };
 
-
-  
   return (
-     
     <Wrapper className="App">
-            
       <header className="App-header">
         <h4>Aggiungi un nuovo cliente</h4>
         <label>Nome:</label>{" "}
@@ -123,10 +117,7 @@ function Clienti() {
             })}
           </ul>
         </div>
-   
       </header>
-
- 
     </Wrapper>
   );
 }

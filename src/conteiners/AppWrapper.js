@@ -3,7 +3,12 @@ const Wrapper = styled.div`
    .App {
   text-align: center;
 }
-
+.pulsanteMenu {
+    border: none!important;
+    position: relative!important;
+    left: 93%!important;
+    top: 10px!important;
+}
 .App-logo {
   height: 150px;
   pointer-events: none;

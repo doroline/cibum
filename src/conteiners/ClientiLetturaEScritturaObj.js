@@ -24,12 +24,12 @@ function ClientiLetturaEScritturaObj() {
     });
   }, []);
 
-// parte dedicata alla scrittura nel db di tipo oggetti
-const [inputCorrente, setInputCorrente] = useState({
-  nome: "",
-  cognome: "",
-  foto: "",
-});
+  // parte dedicata alla scrittura nel db di tipo oggetti
+  const [inputCorrente, setInputCorrente] = useState({
+    nome: "",
+    cognome: "",
+    foto: "",
+  });
 
   const gestisciOnChange = (evento) => {
     setInputCorrente({
@@ -39,16 +39,20 @@ const [inputCorrente, setInputCorrente] = useState({
   };
 
   const aggiungiElementoAllaLista = () => {
+    // con queste 3 righr di codice aggiorno l'app react, aggiungendo il nuovo utente
+    const nuovaTabella = { ...tabella };
+   nuovaTabella[inputCorrente.nome] = inputCorrente;
+    setTabella(nuovaTabella);
+
+    // invece da qui in poi aggiorno il db, aggiungendo il nuovo utente
+    // const riferimentoLista = firebase.database().ref("/clientiObj/" + inputCorrente.nome);
+    // riferimentoLista.set(inputCorrente);
+
     const nuovaLista = [...nodo];
 
-    nuovaLista.push({
-      ...inputCorrente,
-    });
-    setNodo(nuovaLista);
-    setInputCorrente({ nome: "", cognome: "", foto: "" });
-
-    const riferimentoLista = firebase.database().ref("/clientiObj");
-    riferimentoLista.set(nuovaLista);
+    nuovaLista.push(inputCorrente.nome);
+     setNodo(nuovaLista);
+     setInputCorrente({ nome: "", cognome: "", foto: "" });
   };
   return (
     <div className="App">
@@ -68,7 +72,7 @@ const [inputCorrente, setInputCorrente] = useState({
           </ul>
         </div>
         <>
-          <h4>Aggiungi un nuovo cliente</h4>
+          <h4>Aggiungi un nuovo cliente alla lista</h4>
           <label>Nome:</label>{" "}
           <input
             value={inputCorrente.nome}
