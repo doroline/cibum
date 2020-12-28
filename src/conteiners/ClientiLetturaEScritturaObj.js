@@ -44,12 +44,12 @@ function ClientiLetturaEScritturaObj() {
    nuovaTabella[inputCorrente.nome] = inputCorrente;
     setTabella(nuovaTabella);
 
-    // invece da qui in poi aggiorno il db, aggiungendo il nuovo utente
-    // const riferimentoLista = firebase.database().ref("/clientiObj/" + inputCorrente.nome);
-    // riferimentoLista.set(inputCorrente);
+    // invece con queste 2 righe aggiorno il db, aggiungendo il nuovo utente
+    const riferimentoLista = firebase.database().ref("/clientiObj/" + inputCorrente.nome);
+    riferimentoLista.set(inputCorrente);
 
+    // qui invece aggiorno anche la supervariabile nodo con il nuovo utente e poi alla fine svuoto i camnpi
     const nuovaLista = [...nodo];
-
     nuovaLista.push(inputCorrente.nome);
      setNodo(nuovaLista);
      setInputCorrente({ nome: "", cognome: "", foto: "" });

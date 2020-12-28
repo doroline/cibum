@@ -10,7 +10,10 @@ import GlobalStyles from './globalStyles';
 //import Drawer from './conteiners/Drawer';
 //import ClientiLettura from './conteiners/ClientiLettura';
 //import Clienti from './conteiners/ClientiLetturaObj';
-import Clienti from './conteiners/ClientiLetturaEScritturaObj';
+//import Clienti from './conteiners/ClientiLetturaEScritturaObj';
+//import Aziende from './conteiners/Aziende';
+//import Variabili from './conteiners/Variabili';
+import Inizio from './conteiners/Inizio';
 //import HomeDb from './conteiners/HomeDb';
 //import Home from './conteiners/Home';
 import reportWebVitals from './reportWebVitals';
@@ -18,7 +21,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
   <>
-    <Clienti />
+    <Inizio />
     <GlobalStyles />
   </>
   </React.StrictMode>,

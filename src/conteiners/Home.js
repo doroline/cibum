@@ -1,7 +1,7 @@
 import { Component, useState } from 'react';
 import ScegliLingua from '../components/ScegliLingua';
 import BarraNavigazione from '../components/BarraNavigazione';
-import './App.css';
+//import './App.css';
 
 function Home() {
   const [currentLingua, setCurrentLingua] = useState("it");
